@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://style/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://pnlProb.gd" type="Script" id=2]
+
+[node name="pnlProb" type="Panel"]
+margin_left = 21.0
+margin_top = 364.0
+margin_right = 487.0
+margin_bottom = 589.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sldAll" type="HSlider" parent="."]
+margin_left = 207.0
+margin_top = 10.0
+margin_right = 369.0
+margin_bottom = 26.0
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblAllValue" type="Label" parent="."]
+margin_left = 421.0
+margin_top = 9.0
+margin_right = 447.0
+margin_bottom = 29.0
+theme = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblAll" type="Label" parent="."]
+anchor_left = 0.009
+anchor_top = 0.102
+anchor_right = 0.009
+anchor_bottom = 0.102
+margin_left = -0.194
+margin_top = -17.95
+margin_right = 302.806
+margin_bottom = 0.0499992
+theme = ExtResource( 1 )
+text = "Незанятые вероятности"
+__meta__ = {
+"_edit_use_anchors_": false
+}

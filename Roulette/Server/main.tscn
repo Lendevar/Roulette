@@ -1,0 +1,193 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://style/new_theme.tres" type="Theme" id=2]
+[ext_resource path="res://pnlProb.tscn" type="PackedScene" id=3]
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblDob" type="Label" parent="."]
+margin_left = 82.0
+margin_top = 10.0
+margin_right = 275.0
+margin_bottom = 28.0
+theme = ExtResource( 2 )
+text = "Торговые точки"
+
+[node name="lblDob5" type="Label" parent="."]
+margin_left = 558.0
+margin_top = 14.0
+margin_right = 751.0
+margin_bottom = 32.0
+theme = ExtResource( 2 )
+text = "Коды рулетки"
+
+[node name="lblDob2" type="Label" parent="."]
+margin_left = 13.0
+margin_top = 41.0
+margin_right = 62.0
+margin_bottom = 80.0
+theme = ExtResource( 2 )
+text = "Адрес
+"
+
+[node name="lblDob3" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 251.0
+margin_right = 79.0
+margin_bottom = 290.0
+theme = ExtResource( 2 )
+text = "Адрес
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblDob4" type="Label" parent="."]
+margin_left = 216.0
+margin_top = 252.0
+margin_right = 266.0
+margin_bottom = 291.0
+theme = ExtResource( 2 )
+text = "Пароль"
+
+[node name="lblErrorRemain" type="Label" parent="."]
+visible = false
+margin_left = 172.0
+margin_top = 691.0
+margin_right = 489.0
+margin_bottom = 716.0
+theme = ExtResource( 2 )
+text = "Незанятые вероятности должны быть равны 0"
+
+[node name="lblUpdated" type="Label" parent="."]
+visible = false
+margin_left = 171.0
+margin_top = 664.0
+margin_right = 488.0
+margin_bottom = 689.0
+theme = ExtResource( 2 )
+text = "Обновлено!"
+
+[node name="lblDob6" type="Label" parent="."]
+margin_left = 509.0
+margin_top = 300.0
+margin_right = 559.0
+margin_bottom = 339.0
+theme = ExtResource( 2 )
+text = "Действительные коды (можно скопировать)"
+
+[node name="txtAdress" type="TextEdit" parent="."]
+margin_left = 69.0
+margin_top = 40.0
+margin_right = 301.0
+margin_bottom = 65.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txtAdressEdit" type="TextEdit" parent="."]
+margin_left = 19.0
+margin_top = 276.0
+margin_right = 197.0
+margin_bottom = 301.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txtForCopy" type="TextEdit" parent="."]
+margin_left = 509.0
+margin_top = 325.0
+margin_right = 912.0
+margin_bottom = 405.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txtPassCode" type="TextEdit" parent="."]
+margin_left = 209.0
+margin_top = 276.0
+margin_right = 297.0
+margin_bottom = 301.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnAdd" type="Button" parent="."]
+margin_left = 315.0
+margin_top = 40.0
+margin_right = 353.0
+margin_bottom = 64.0
+theme = ExtResource( 2 )
+text = "+"
+
+[node name="listAdress" type="ItemList" parent="."]
+margin_left = 17.0
+margin_top = 80.0
+margin_right = 352.0
+margin_bottom = 238.0
+theme = ExtResource( 2 )
+select_mode = 1
+max_columns = 2
+
+[node name="btnEdit" type="Button" parent="."]
+margin_left = 310.0
+margin_top = 276.0
+margin_right = 389.0
+margin_bottom = 300.0
+theme = ExtResource( 2 )
+text = "Изменить"
+
+[node name="btnProb" type="Button" parent="."]
+margin_left = 262.0
+margin_top = 562.0
+margin_right = 484.0
+margin_bottom = 586.0
+theme = ExtResource( 2 )
+text = "Модифицировать вероятности"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="listCodes" type="ItemList" parent="."]
+margin_left = 506.0
+margin_top = 81.0
+margin_right = 919.0
+margin_bottom = 289.0
+theme = ExtResource( 2 )
+select_mode = 1
+max_columns = 3
+
+[node name="btnAddCode" type="Button" parent="."]
+margin_left = 841.0
+margin_top = 45.0
+margin_right = 907.0
+margin_bottom = 65.0
+theme = ExtResource( 2 )
+text = "Добавить"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pnlProb" parent="." instance=ExtResource( 3 )]
+margin_left = 18.0
+margin_top = 325.0
+margin_right = 484.0
+margin_bottom = 550.0
+
+[connection signal="button_up" from="btnAdd" to="." method="_on_btnAdd_button_up"]
+[connection signal="multi_selected" from="listAdress" to="." method="_on_listAdress_multi_selected"]
+[connection signal="button_up" from="btnEdit" to="." method="_on_btnEdit_button_up"]
+[connection signal="button_up" from="btnProb" to="." method="_on_btnProb_button_up"]
+[connection signal="button_up" from="btnAddCode" to="." method="_on_btnAddCode_button_up"]

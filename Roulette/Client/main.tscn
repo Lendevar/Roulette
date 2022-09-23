@@ -1,0 +1,355 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://style/OmniglotFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://style/new_theme.tres" type="Theme" id=2]
+[ext_resource path="res://main.gd" type="Script" id=3]
+[ext_resource path="res://style/wheel-of-life-min2.png" type="Texture" id=4]
+[ext_resource path="res://style/White_Arrow_Up.svg.png" type="Texture" id=5]
+[ext_resource path="res://style/emoji-icon-glossy-25-33-symbols-geometric-green-circle-72dpi-forPersonalUseOnly.png" type="Texture" id=6]
+[ext_resource path="res://style/new_themeWheel.tres" type="Theme" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pnlStart" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -49.0
+margin_right = 136.0
+margin_bottom = 73.0
+
+[node name="Label" type="Label" parent="pnlStart"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -114.0
+margin_top = 5.0
+margin_right = 114.0
+margin_bottom = 23.0
+theme = SubResource( 2 )
+text = "Пожалуйста, введите ваш пароль"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblError" type="Label" parent="pnlStart"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 21.0
+margin_right = 164.0
+margin_bottom = 39.0
+theme = SubResource( 2 )
+text = "Пароль не подходит"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txtPass" type="LineEdit" parent="pnlStart"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.5
+margin_top = -20.0
+margin_right = 105.5
+margin_bottom = 20.0
+theme = ExtResource( 2 )
+align = 1
+
+[node name="btnLogin" type="Button" parent="pnlStart"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -51.0
+margin_top = -28.0
+margin_right = 51.0
+margin_bottom = -4.0
+theme = ExtResource( 2 )
+text = "Войти"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pnlRoulette" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -499.5
+margin_top = -288.0
+margin_right = 499.5
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pnlCode" type="Panel" parent="pnlRoulette"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -138.0
+margin_top = -188.0
+margin_right = 138.0
+margin_bottom = 188.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txtCode" type="LineEdit" parent="pnlRoulette/pnlCode"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.5
+margin_top = -8.0
+margin_right = 105.5
+margin_bottom = 32.0
+theme = ExtResource( 2 )
+align = 1
+
+[node name="Label2" type="Label" parent="pnlRoulette/pnlCode"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -113.0
+margin_top = 144.0
+margin_right = 115.0
+margin_bottom = 162.0
+theme = SubResource( 2 )
+text = "Введите код и выиграйте приз"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnCode" type="Button" parent="pnlRoulette/pnlCode"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.0
+margin_top = 46.0
+margin_right = 61.0
+margin_bottom = 70.0
+theme = ExtResource( 2 )
+text = "Испытать удачу"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblError" type="Label" parent="pnlRoulette/pnlCode"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 160.0
+margin_right = 164.0
+margin_bottom = 178.0
+theme = SubResource( 2 )
+text = "Код не подходит"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pnlWheel" type="Panel" parent="pnlRoulette"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -291.5
+margin_top = -259.0
+margin_right = 291.5
+margin_bottom = 259.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wheel" type="Sprite" parent="pnlRoulette/pnlWheel"]
+position = Vector2( 291.5, 256 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="lbl1" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = -145.0
+margin_top = -191.25
+margin_right = -23.0
+margin_bottom = -164.25
+rect_rotation = -22.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10 литров"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl8" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = 136.25
+margin_top = 197.5
+margin_right = 226.25
+margin_bottom = 224.5
+rect_rotation = 157.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Jackpot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl7" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = -38.75
+margin_top = 238.75
+margin_right = 68.25
+margin_bottom = 265.75
+rect_rotation = 202.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5 литров"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl2" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = -236.25
+margin_top = -32.5
+margin_right = -117.25
+margin_bottom = -5.49997
+rect_rotation = -67.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0.5 Литра"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl4" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = 46.25
+margin_top = -232.5
+margin_right = 137.25
+margin_bottom = -205.5
+rect_rotation = 22.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2 литра"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl6" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = 198.75
+margin_top = -120.0
+margin_right = 276.75
+margin_bottom = -93.0
+rect_rotation = 67.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1 литр"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl3" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = -188.75
+margin_top = 161.25
+margin_right = -37.75
+margin_bottom = 218.25
+rect_rotation = -112.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Попробуйте
+     ещё"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl5" type="Label" parent="pnlRoulette/pnlWheel/wheel"]
+margin_left = 232.5
+margin_top = 32.5
+margin_right = 337.5
+margin_bottom = 59.5
+rect_rotation = 112.5
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Подарок"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="pnlRoulette/pnlWheel/wheel"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+
+[node name="WhiteArrowUpsvg" type="Sprite" parent="pnlRoulette/pnlWheel"]
+position = Vector2( 291.5, 49 )
+rotation = 3.14159
+scale = Vector2( 0.0171132, 0.0167187 )
+texture = ExtResource( 5 )
+
+[node name="btnSpin" type="Button" parent="pnlRoulette/pnlWheel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -45.0
+margin_right = 70.0
+theme = ExtResource( 7 )
+text = "SPIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnBack" type="Button" parent="pnlRoulette/pnlWheel"]
+margin_right = 52.0
+margin_bottom = 45.0
+theme = ExtResource( 2 )
+text = "<-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="pnlRoulette/pnlWheel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -164.0
+margin_top = -1.0
+margin_right = 64.0
+margin_bottom = 17.0
+theme = SubResource( 2 )
+text = "Ваш приз:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblWin" type="Label" parent="pnlRoulette/pnlWheel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -48.0
+margin_right = 48.0
+margin_bottom = 18.0
+theme = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="pnlStart/btnLogin" to="." method="_on_btnLogin_button_up"]
+[connection signal="button_up" from="pnlRoulette/pnlCode/btnCode" to="." method="_on_btnCode_button_up"]
+[connection signal="button_up" from="pnlRoulette/pnlWheel/btnSpin" to="." method="_on_btnSpin_button_up"]
+[connection signal="button_up" from="pnlRoulette/pnlWheel/btnBack" to="." method="_on_btnBack_button_up"]
